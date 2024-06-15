@@ -21,13 +21,13 @@ export default function BreadCrumbs() {
         <BreadcrumbItem>
           <BreadcrumbLink href="/">Home</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator />
         {pathNames.map((link, index) => {
           const href : string = `&{pathNames.slice(0, index+1).join('/')}`;
-          const linkName : string = link[0].toUpperCase() + link.slice(1, link.length);
-          const isLastPath : boolean = pathNames.length === index + 1;
+          const linkName : string = link.charAt(0).toUpperCase() + link.slice(1);
+          const isLastPath : boolean = index === pathNames.length - 1;
           return (
             <Fragment key={index}>
+              <BreadcrumbSeparator />
               {!isLastPath ? (
                 <BreadcrumbItem>
                   <BreadcrumbLink href={href}>{linkName}</BreadcrumbLink>
