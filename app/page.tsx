@@ -1,9 +1,10 @@
-import Image from "next/image";
+import { CarouselDemo } from "@/components/CarouselDemo/CarouselDemo";
+
 
 export default function Home() {
   return (
-    <>
-      hello
-    </>
+    <div className="flex justify-center py-5 min-h-screen items-center">
+      <CarouselDemo />
+    </div>
   );
 }
