@@ -63,12 +63,12 @@ const treeData: TreeNodeProps[] = [
 // A recursive function to load the tree
 const TreeNode: React.FC<{ node: TreeNodeProps }> = ({ node }) => {
   return (
-    <div>
-      <span>{node.value}</span>
+    <div className="text-center">
+      <span className="p-3 border border-yellow-300 rounded-sm">{node.value}</span>
       {node.children && node.children.length > 0 && (
         <ul className="flex gap-5">
           {node.children.map((child) => (
-            <li key={child.id}>
+            <li key={child.id} className="border border-cyan-400 p-5 rounded-sm">
               <TreeNode node={child} />
             </li>
           ))}
