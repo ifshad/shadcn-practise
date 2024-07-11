@@ -1,13 +1,33 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
+
+// import plugin from 'tailwindcss/plugin'
+const plugin = require('tailwindcss/plugin')
+// Rotate Plugin
+const rotateY = plugin(function ({ addUtilities }: any) {
+  addUtilities({
+    '.rotate-y-180': {
+      'transform': 'rotateY(180deg)',
+    },
+    '.preserve-3d': {
+      'transform-style' : 'preserve-3D',
+    },
+    '.perspective': {
+      'perspective': '1000px'
+    },
+    '.backface-hidden': {
+      'backface-visibility': 'hidden',
+    }
+  });
+});
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -74,7 +94,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
+  plugins: [require("tailwindcss-animate"), rotateY],
+} satisfies Config;
 
-export default config
+export default config;

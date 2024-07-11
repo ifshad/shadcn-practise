@@ -1,5 +1,6 @@
 import BinaryTree from "@/components/BinaryTree/page";
 import { CarouselDemo } from "@/components/CarouselDemo/CarouselDemo";
+import FlipCard from "@/components/FlipCard/page";
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="flex flex-col gap-7 justify-center py-5 min-h-screen items-center">
       <CarouselDemo />
       <BinaryTree />
+      <FlipCard />
     </div>
   );
 }
