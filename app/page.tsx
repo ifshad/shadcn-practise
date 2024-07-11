@@ -2,6 +2,7 @@ import BinaryTree from "@/components/BinaryTree/page";
 import { CarouselDemo } from "@/components/CarouselDemo/CarouselDemo";
 import DropDown from "@/components/DropDown/page";
 import FlipCard from "@/components/FlipCard/page";
+import SideMenu from "@/components/SideMenu/page";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <BinaryTree />
       <FlipCard />
       <DropDown />
+      <SideMenu />
     </div>
   );
 }
