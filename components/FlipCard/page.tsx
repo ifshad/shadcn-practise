@@ -3,10 +3,13 @@ import React from "react";
 export default function FlipCard() {
   return (
     <div className="min-h-screen flex items-center justify-center">
+      {/* Flip Card */}
       <div className="bg-transparent rounded-md w-80 h-96 cursor-pointer group perspective">
+        {/* Child */}
         <div className="relative w-full h-full transition-1000 group-hover:rotate-y-180 duration-1000 preserve-3d">
-          <div className="absolute w-full backface-hidden bg-slate-100">
-            <h1>Frint side</h1>
+          {/* Front Side */}
+          <div className="absolute w-full h-full p-10 backface-hidden bg-slate-100">
+            <h1>Front side</h1>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet
               ratione placeat ipsam culpa perspiciatis, vero nihil tempora
@@ -15,7 +18,8 @@ export default function FlipCard() {
             </p>
             <span>go back</span>
           </div>
-          <div className="absolute w-full backface-hidden rotate-y-180 bg-rose-100">
+          {/* Back Side */}
+          <div className="absolute w-full h-full p-10 backface-hidden rotate-y-180 bg-rose-100">
             <h1>Back side</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
