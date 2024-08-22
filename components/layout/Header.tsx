@@ -14,13 +14,14 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { useRouter } from "next/navigation";
+import { logoutUser } from "@/utils/auth";
 
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Connect",
     href: "/connect",
-    description:
-      "lorem ipsum loret amor del para busin.",
+    description: "lorem ipsum loret amor del para busin.",
   },
   {
     title: "Requests",
@@ -54,6 +55,13 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 const Header: FC = () => {
+  const token = localStorage.getItem("jwt");
+  const router = useRouter();
+
+  const handleLogout = () => {
+    logoutUser(); // Remove JWT and user data
+    router.push("/login"); // Redirect to login page
+  };
   return (
     <div className="flex justify-around p-2">
       <div>
@@ -116,6 +124,15 @@ const Header: FC = () => {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
+          {token ? (
+            <button onClick={handleLogout}>Logout</button>
+          ) : (
+            <NavigationMenuItem>
+              <div>
+                <Link href="/login">Login</Link>
+              </div>
+            </NavigationMenuItem>
+          )}
         </NavigationMenuList>
       </NavigationMenu>
     </div>
