@@ -1,5 +1,4 @@
 "use client";
-// pages/login.js
 import { loginUser } from "@/utils/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -13,11 +12,9 @@ const Login = () => {
     const password = formData.get("password");
     const token = loginUser(phoneNumber, password);
     if (token) {
-      // Redirect to dashboard or home
       router.push("/");
       console.log(phoneNumber);
     } else {
-      // Show error
       console.log("an error occured");
     }
   };
